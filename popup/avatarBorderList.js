@@ -90,12 +90,59 @@ export default [
     }
   },
   {
-    "name": "test_4",
+    "name": "黑白圆锥渐变",
     "value": {
-      "element": "",
-      "before": "",
-      "after": "",
-      "other": ""
+      "element": `
+        position: relative;
+      `,
+      "before": `
+        content: '';
+        position: absolute;
+        width: calc(100% + 12px);
+        height: calc(100% + 12px);
+        top: -6px;
+        left: -6px;
+        background-image: repeating-conic-gradient(#fff, #000, #fff 30deg);
+        border-radius: 50%;
+        animation: myAvatarBorderRotateReverse 10s infinite;
+        animation-timing-function: steps(10);
+        animation-delay: -0.5s;
+      `,
+      "after": `
+        content: '';
+        position: absolute;
+        width: calc(100% + 6px);
+        height: calc(100% + 6px);
+        top: -3px;
+        left: -3px;
+        background-image: repeating-conic-gradient(#fff, #000, #fff 30deg);
+        border-radius: 50%;
+        animation: myAvatarBorderRotateForward 10s infinite;
+        animation-timing-function: steps(10);
+      `,
+      "other": `
+        @keyframes myAvatarBorderRotateForward {
+          0% {
+            transform: rotateZ(0);
+          }
+          100% {
+            transform: rotateZ(360deg);
+          }
+        }
+
+        @keyframes myAvatarBorderRotateReverse {
+          0% {
+            transform: rotateZ(0);
+          }
+          100% {
+            transform: rotateZ(-360deg);
+          }
+        }
+
+        .my-avatar-border img {
+          z-index: 1;
+        }
+      `
     }
   }
 ]
