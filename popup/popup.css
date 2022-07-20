@@ -1,0 +1,184 @@
+body {
+  padding: 10px;
+  width: 300px;
+  height: 350px;
+  color: #71717a;
+}
+
+h2 {
+  color: #27272a;
+}
+
+/* 更改头像框 选择器 */
+.avatar-border-selector {
+  position: relative;
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.avatar-border-selector .input_inner + i {
+  position: absolute;
+  color: #c0c4cc;
+  font-size: 14px;
+  transition: transform .3s;
+  transform: rotate(0);
+  cursor: pointer;
+  right: 9px;
+  top: 45px;
+  z-index: 1;
+}
+.avatar-border-selector .input_inner:focus + i {
+  transform: rotate(180deg);
+}
+#avatarSelectList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+  position: absolute;
+  top: 76px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #fff;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.avatar-border-selector .input_inner:focus ~ #avatarSelectList {
+  height: 120px;
+  padding: 6px 0;
+  overflow-y: auto;
+}
+#avatarSelectList  li {
+  font-size: 14px;
+  padding: 0 20px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #606266;
+  height: 34px;
+  line-height: 34px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#avatarSelectList li:hover {
+  background-color: #f5f7fa;
+}
+#avatarSelectList li.selected {
+  color: #409eff;
+  font-weight: 700;
+}
+
+/* 需要处理头像 选择 */
+.avatar-selector {
+  position: relative;
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.avatar-selector-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 3px 0;
+}
+.avatar-selector-item span {
+  width: 100px;
+}
+
+/* 执行结果 */
+.result {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 14px;
+  color: #a1a1aa;
+}
+
+/* title */
+.title {
+  margin: 5px 0;
+}
+
+/* input */
+.input_inner {
+  position: relative;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  box-sizing: border-box;
+  color: #606266;
+  display: inline-block;
+  font-size: inherit;
+  height: 40px;
+  line-height: 40px;
+  outline: none;
+  padding: 0 15px;
+  transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+  width: 100%;
+  padding-right: 30px;
+}
+.input_inner:hover,
+.input_inner:active,
+.input_inner:focus {
+  border-color: #409eff;
+  color: #a1a1a1;
+}
+
+/*  底部按钮 */
+.footer-btns {
+  display: flex;
+  justify-content: center;
+}
+/* 添加头像框 按钮 */
+#addAvatarBorder {
+  cursor: pointer;
+  padding: 10px 17px;
+  border: none;
+  background-color: #2563eb;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 12px;
+  margin: 0 auto;
+  flex: 1;
+  margin-left: 5px;
+}
+/* 移除头像框 按钮 */
+#removeAvatarBorder {
+  cursor: pointer;
+  padding: 10px 17px;
+  border: 1px solid #606266;
+  color: #333;
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 12px;
+  margin: 0 auto;
+  flex: 1;
+  margin-right: 5px;
+}
+
+/* 鼠标悬浮效果 */
+.hover-effect {
+  position: relative;
+}
+.hover-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.hover-effect:hover::after {
+  opacity: 1;
+}

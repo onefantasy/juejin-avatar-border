@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <!-- 头像框选择 -->
+    <div class="avatar-border-selector">
+      <h2 class="title"> 选择头像框 </h2>
+      <input
+        id="avatarSelectInput"
+        type="text"
+        class="input_inner"
+        placeholder="请选择头像框"
+        readonly
+        autocomplete="off"
+      />
+      <i>V</i>
+      <ul id="avatarSelectList"></ul>
+    </div>
+
+    <!-- 需要处理的头像选择 -->
+    <div class="avatar-selector">
+      <h2 class="title"> 选择需要处理的头像 </h2>
+      <div class="avatar-selector-item">
+        <span> 全部头像 </span>
+        <input type="checkbox" name="avatar" value="all" />
+      </div>
+      <div class="avatar-selector-item">
+        <span> 导航栏头像 </span>
+        <input type="checkbox" name="avatar" value="nav" />
+      </div>
+      <div class="avatar-selector-item">
+        <span> 用户名称 </span>
+        <input type="text" name="avatar" class="input_inner" placeholder="请输入完整用户名称" style="flex:1" />
+      </div>
+    </div>
+
+    <!-- 执行结果 -->
+    <div class="result" id="result">
+      <span class="face"> ( ͡• ͜ʖ ͡• ) </span>
+      <span class="text"> 选择头像框与修改的头像，点击下方按钮改变 ! </span>
+    </div>
+
+    <footer class="footer-btns">
+      <button id="removeAvatarBorder" class="hover-effect"> 移除 </button>
+      <button id="addAvatarBorder" class="hover-effect"> 添加 </button>
+    </footer>
+
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>
+
